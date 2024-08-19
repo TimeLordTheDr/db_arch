@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Hello World!</h1>
+<p>Welcome to my first Django project!</p>
+<ul>
+    {% for x in mymembers %}
+      <li>{{ x.first_name }} {{ x.last_name }}</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
