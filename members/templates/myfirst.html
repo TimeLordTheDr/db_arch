@@ -5,5 +5,15 @@
 <h1>Hello World!</h1>
 <p>Welcome to my first Django project!</p>
 <p>Go to <a href="/all">All</a></p>
+
+
+<ul>
+    {% for x in mymembers %}
+      {% comment %} <li> <a href='details/{{x.id}}'> {{ x.first_name }} {{ x.last_name }} </a> </li> {% endcomment %}
+      <li> <a href="{% url 'details' x.id%}"> {{ x.first_name }} {{ x.last_name }} </a> </li> 
+    {% endfor %}
+  </ul>
+
+
 </body>
 </html>

@@ -11,12 +11,12 @@ All Members Page
 
 
 {% block  content %}
-<h1>Members</h1>
+<h1>All Members</h1>
   
 <ul>
   {% for x in mymembers %}
-    {% comment %} <li> <a href='details/{{x.id}}'> {{ x.first_name }} {{ x.last_name }} </a> </li> {% endcomment %}
-    <li> <a href="{% url 'details' x.id%}"> {{ x.first_name }} {{ x.last_name }} </a> </li> 
+    <li> <a href='details/{{x.id}}'> {{ x.first_name }} {{ x.last_name }} </a> </li>
+    {% comment %} <li> <a href="{% url 'details' x.id%}"> {{ x.first_name }} {{ x.last_name }} </a> </li>  {% endcomment %}
   {% endfor %}
 </ul>
 {% endblock  %}
