@@ -51,8 +51,10 @@ def main(request):
 
 def testing(request):
   # template = loader.get_template('template.html')
+  # mydata = Member.objects.filter(first_name='New').values()
+  mydata = Member.objects.all().order_by('-first_name', '-salary').values()
   context = {
-    'fruits': ['Apple', 'Banana', 'Cherry'],   
+    'mymembers': mydata,
   }
   # return HttpResponse(template.render(context, request))
   return render(request, 'template.html', context)
