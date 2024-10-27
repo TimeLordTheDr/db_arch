@@ -42,3 +42,17 @@ def details(request, id):
   }
   # return HttpResponse(template.render(context, request))
   return render(request, 'details.html', context)
+
+
+def main(request):
+  # template = loader.get_template('main.html')
+  # return HttpResponse(template.render())
+  return render(request, 'main.html')
+
+def testing(request):
+  # template = loader.get_template('template.html')
+  context = {
+    'fruits': ['Apple', 'Banana', 'Cherry'],   
+  }
+  # return HttpResponse(template.render(context, request))
+  return render(request, 'template.html', context)

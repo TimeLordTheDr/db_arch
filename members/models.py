@@ -7,3 +7,6 @@ class Member(models.Model):
     salary = models.PositiveSmallIntegerField()
     updated = models.DateTimeField( auto_now = True )  
     """I want now as datetime default """   
+    
+    # def __str__(self) -> str:
+    #     return f"{self.first_name} {self.last_name} {self.salary} {self.updated}"
