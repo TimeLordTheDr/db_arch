@@ -1,0 +1,44 @@
+.styled-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .styled-table th,
+  .styled-table td {
+    padding: 8px;
+  }
+  
+  /* Style for the header row */
+  .styled-table thead th {
+    background-color: darkblue;
+    color: white;
+    border: 0px 1px 0px 1px ;
+  }
+  
+  /* Style for the first column */
+  .styled-table th:first-child {
+    background-color: darkgreen;
+    color: white;
+    border: 0px 1px 0px 1px ;
+  }
+  
+  /* Alternating row colors */
+  .styled-table tbody tr:nth-child(even) {
+    background-color: lightgray;
+  }
+  
+  .styled-table tbody tr:nth-child(odd) {
+    background-color: lightgreen;
+  }
+  
+  /* Border for cells in the first column and header row */
+  .styled-table th:first-child,
+  .styled-table td:first-child,
+  .styled-table thead th {
+    border: 0px 1px 0px 1px ;
+  }
+  
+  /* Remove border from other cells */
+  .styled-table td {
+    border: none;
+  }

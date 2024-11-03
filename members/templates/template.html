@@ -1,32 +1,37 @@
-{% load static %}
+{% extends 'master.html' %}
 
-<!DOCTYPE html>
-<html>
-  
+{% block title %}
+Testing
+{% endblock %}
 
-    <link rel="stylesheet" href="{% static 'table_view.css' %}">
 
-  
-<body>
 
-<p>In views.py you can see what the fruits variable looks like.</p>
+{%block content%}
 
-<table class="styled-table">
-  <tr>
-    <th>ID</th>
-    <th>Firstname</th>
-    <th>Lastname</th>
-    <th>Salary</th>
-  </tr>
-  {% for x in mymembers %}
-    <tr>
-      <td>{{ x.id }}</td>
-        <td>{{ x.first_name }}</td>
-      <td>{{ x.last_name }}</td>
-      <td>{{ x.salary }}</td>
-    </tr>
-  {% endfor %}
-</table>
+  <div class="container text-center">
 
+    <table class="table table-info table-striped table-hover">
+      <tr>
+        <th>ID</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Salary</th>
+      </tr>
+      {% for x in mymembers %}
+        <tr>
+          <td>{{ x.id }}</td>
+            <td>{{ x.first_name }}</td>
+          <td>{{ x.last_name }}</td>
+          <td>{{ x.salary }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+
+  </div>
+{%endblock%}
+
+
+
+    
 </body>
 </html>
