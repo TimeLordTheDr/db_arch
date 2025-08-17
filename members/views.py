@@ -71,6 +71,39 @@ def details(request, id):
         'mymember': mymember,
     }
     return render(request, 'details.html', context)
+def delete_member(request, id):
+    member = Member.objects.get(id=id)
+    member.delete()
+    return render(request, 'all_members.html', {
+        'mymembers': Member.objects.all().values(),
+    })
+
+def edit_member(request, id):
+    member = Member.objects.get(id=id)
+    return render(request, 'edit_member.html', {
+        'mymember': member,
+    })
+
+def update_member(request, id):
+    if request.method == 'POST':
+        member = Member.objects.get(id=id)
+        member.first_name = request.POST.get('first_name', member.first_name)
+        member.last_name = request.POST.get('last_name', member.last_name)
+        member.salary = request.POST.get('salary', member.salary)
+        member.save()
+    return render(request, 'all_members.html', {
+        'mymembers': Member.objects.all().values(),
+    })
+
+def create_member(request):
+    if request.method == 'POST':
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
+        salary = request.POST.get('salary')
+        Member.objects.create(first_name=first_name, last_name=last_name, salary=salary)
+    return render(request, 'all_members.html', {
+        'mymembers': Member.objects.all().values(),
+    })
 
 def main(request):
   # template = loader.get_template('main.html')
